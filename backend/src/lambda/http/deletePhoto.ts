@@ -4,7 +4,7 @@ import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda'
 import * as middy from 'middy'
 import { cors, httpErrorHandler } from 'middy/middlewares'
 
-import { deletePhoto } from '../../helpers/photos'
+import { deletePhoto } from '../../businessLogic/photosLogic'
 import { getUserId, Responses } from '../utils'
 import {createLogger} from '../../utils/logger'
 const logger = createLogger('updatePhoto')

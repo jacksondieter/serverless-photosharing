@@ -1,5 +1,5 @@
-import { PhotoAccess } from './photosAccess'
-import { AttachmentUtils } from './attachmentUtils';
+import { PhotoAccess } from '../dataLayer/AWSDynamoPhotosAccess'
+import { AttachmentUtils } from '../dataLayer/AWSS3PhotosAccess';
 import { PhotoItem } from '../models/PhotoItem'
 import { CreatePhotoRequest } from '../requests/CreatePhotoRequest'
 import { UpdatePhotoRequest } from '../requests/UpdatePhotoRequest'
@@ -8,7 +8,6 @@ import * as uuid from 'uuid'
 // import * as createError from 'http-errors'
 // import { PhotoUpdate } from '../models/PhotoUpdate'
 
-// TODO: Implement businessLogic
 const photoAccess =  new PhotoAccess()
 const attachment =  new AttachmentUtils()
 const logger = createLogger('photoLogic')

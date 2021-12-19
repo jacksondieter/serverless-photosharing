@@ -1,5 +1,5 @@
 // import * as AWS from 'aws-sdk'
-import {XAWS as AWS}from './AWS'
+import {XAWS as AWS}from './AWSXRay'
 import { DocumentClient } from 'aws-sdk/clients/dynamodb'
 import { createLogger } from '../utils/logger'
 import { PhotoItem } from '../models/PhotoItem'

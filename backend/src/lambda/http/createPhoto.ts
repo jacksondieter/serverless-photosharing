@@ -4,7 +4,7 @@ import * as middy from 'middy'
 import { cors, httpErrorHandler } from 'middy/middlewares'
 import { CreatePhotoRequest } from '../../requests/CreatePhotoRequest'
 import { getUserId, Responses } from '../utils';
-import { createPhoto } from '../../helpers/photos'
+import { createPhoto } from '../../businessLogic/photosLogic'
 import {createLogger} from '../../utils/logger'
 const logger = createLogger('createPhoto')
 

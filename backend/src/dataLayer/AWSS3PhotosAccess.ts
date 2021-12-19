@@ -1,5 +1,5 @@
 // import * as AWS from 'aws-sdk'
-import {XAWS as AWS}from './AWS'
+import {XAWS as AWS}from './AWSXRay'
 import { createLogger } from '../utils/logger'
 
 const logger = createLogger('PhotosImageAttachment')

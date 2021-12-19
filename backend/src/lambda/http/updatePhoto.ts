@@ -4,7 +4,7 @@ import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda'
 import * as middy from 'middy'
 import { cors, httpErrorHandler } from 'middy/middlewares'
 
-import { updatePhoto } from '../../helpers/photos'
+import { updatePhoto } from '../../businessLogic/photosLogic'
 import { UpdatePhotoRequest } from '../../requests/UpdatePhotoRequest'
 import { getUserId, Responses } from '../utils'
 import {createLogger} from '../../utils/logger'
