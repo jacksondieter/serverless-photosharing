@@ -46,7 +46,7 @@ export async function createPhoto(
     name: createPhotoRequest.name,
     dueDate: createPhotoRequest.dueDate,
     createdAt: new Date().toISOString(),
-    share:false
+    sharing:false
   })
 }
 

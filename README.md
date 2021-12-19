@@ -1,4 +1,4 @@
-# Serverless PHOTO
+# Serverless PHOTO Sharing
 
 To implement this project, you need to implement a simple PHOTO application using AWS Lambda and Serverless framework. Search for all comments starting with the `PHOTO:` in the code to find the placeholders that you need to implement.
 
@@ -14,7 +14,7 @@ The application should store PHOTO items, and each PHOTO item contains the follo
 - `createdAt` (string) - date and time when an item was created
 - `name` (string) - name of a PHOTO item (e.g. "Change a light bulb")
 - `dueDate` (string) - date and time by which an item should be share
-- `share` (boolean) - true if an item is share, false otherwise
+- `sharing` (boolean) - true if an item is shared, false otherwise
 - `attachmentUrl` (string) (optional) - a URL pointing to an image attached to a PHOTO item
 
 You might also store an id of a user who created a PHOTO item.
@@ -58,7 +58,7 @@ It should return data that looks like this:
       "createdAt": "2019-07-27T20:01:45.424Z",
       "name": "Buy milk",
       "dueDate": "2019-07-29T20:01:45.424Z",
-      "share": false,
+      "sharing": false,
       "attachmentUrl": "http://example.com/image.png"
     },
     {
@@ -66,7 +66,7 @@ It should return data that looks like this:
       "createdAt": "2019-07-27T20:01:45.424Z",
       "name": "Send a letter",
       "dueDate": "2019-07-29T20:01:45.424Z",
-      "share": true,
+      "sharing": true,
       "attachmentUrl": "http://example.com/image.png"
     }
   ]
@@ -82,7 +82,7 @@ It receives a new PHOTO item to be created in JSON format that looks like this:
   "createdAt": "2019-07-27T20:01:45.424Z",
   "name": "Buy milk",
   "dueDate": "2019-07-29T20:01:45.424Z",
-  "share": false,
+  "sharing": false,
   "attachmentUrl": "http://example.com/image.png"
 }
 ```
@@ -96,7 +96,7 @@ It should return a new PHOTO item that looks like this:
     "createdAt": "2019-07-27T20:01:45.424Z",
     "name": "Buy milk",
     "dueDate": "2019-07-29T20:01:45.424Z",
-    "share": false,
+    "sharing": false,
     "attachmentUrl": "http://example.com/image.png"
   }
 }
@@ -110,7 +110,7 @@ It receives an object that contains three fields that can be updated in a PHOTO 
 {
   "name": "Buy bread",
   "dueDate": "2019-07-29T20:01:45.424Z",
-  "share": true
+  "sharing": true
 }
 ```
 

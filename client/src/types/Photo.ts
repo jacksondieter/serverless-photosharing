@@ -3,6 +3,6 @@ export interface Photo {
   createdAt: string
   name: string
   dueDate: string
-  share: boolean
+  sharing: boolean
   attachmentUrl?: string
 }

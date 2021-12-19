@@ -55,15 +55,16 @@ export class PhotoAccess {
   }
   async updatePhoto(photoId: string, userId:string, photoUpdate:PhotoUpdate) {
     logger.info(`Update photos for photo:${photoId}`)
+    logger.info(`Update ${photoUpdate}`)
     return await this.docClient.update({
         TableName: this.photosTable,
         Key: {
           photoId,
           userId
         },
-        UpdateExpression: 'set share = :share',
+        UpdateExpression: 'set sharing = :s',
         ExpressionAttributeValues: {
-            ":share": photoUpdate.share
+            ":s": photoUpdate.sharing
         }
     }).promise()
   }

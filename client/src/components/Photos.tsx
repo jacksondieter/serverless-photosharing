@@ -82,11 +82,11 @@ export class Photos extends React.PureComponent<PhotosProps, PhotosState> {
       await patchPhoto(this.props.auth.getIdToken(), photo.photoId, {
         name: photo.name,
         dueDate: photo.dueDate,
-        share: !photo.share
+        sharing: !photo.sharing
       })
       this.setState({
         photos: update(this.state.photos, {
-          [pos]: { share: { $set: !photo.share } }
+          [pos]: { sharing: { $set: !photo.sharing } }
         })
       })
     } catch {
@@ -171,7 +171,7 @@ export class Photos extends React.PureComponent<PhotosProps, PhotosState> {
               <Grid.Column width={1} verticalAlign="middle">
                 <Checkbox
                   onChange={() => this.onPhotoCheck(pos)}
-                  checked={photo.share}
+                  checked={photo.sharing}
                 />
               </Grid.Column>
               <Grid.Column width={10} verticalAlign="middle">

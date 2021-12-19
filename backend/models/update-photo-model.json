@@ -9,14 +9,14 @@
     "dueDate": {
       "type": "string"
     },
-    "share": {
+    "sharing": {
       "type": "boolean"
     }
   },
   "required": [
     "name",
     "dueDate",
-    "share"
+    "sharing"
   ],
   "additionalProperties": false
 }
