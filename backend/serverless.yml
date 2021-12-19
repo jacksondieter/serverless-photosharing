@@ -37,6 +37,25 @@ provider:
 functions:
   Auth:
     handler: src/lambda/auth/auth0Authorizer.handler
+  
+  GetPhotosSharing:
+    handler: src/lambda/http/getPhotosSharing.handler
+    events:
+      - http:
+          method: get
+          path: public
+          cors: true
+    iamRoleStatementsName: ${self:service.name}-get-photos-sharing-role-${self:provider.stage}
+    iamRoleStatements:
+      - Effect: Allow
+        Action:
+          - dynamodb:Scan
+        Resource: arn:aws:dynamodb:${self:provider.region}:*:table/${self:provider.environment.PHOTOS_TABLE}
+      - Effect: Allow
+        Action:
+          - xray:PutTelemetryRecords
+          - xray:PutTraceSegments
+        Resource: '*'
 
   GetPhotos:
     handler: src/lambda/http/getPhotos.handler

@@ -29,6 +29,20 @@ export class PhotoAccess {
     return result.Items as PhotoItem[]
   }
 
+  async getPhotosSharing(): Promise<PhotoItem[]> {
+    logger.info(`Getting all shared photos`)
+
+    const result = await this.docClient.scan({
+      TableName: this.photosTable,
+      FilterExpression: 'sharing = :s',
+      ExpressionAttributeValues: {
+        ":s": true
+      }
+    }).promise()
+
+    return result.Items as PhotoItem[]
+  }
+
   async createPhoto(photo: PhotoItem): Promise<PhotoItem> {
     logger.info(`Create photos`)
     await this.docClient.put({

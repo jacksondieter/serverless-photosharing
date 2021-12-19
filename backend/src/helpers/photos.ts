@@ -25,6 +25,12 @@ export async function getPhotosForUser(userId): Promise<PhotoItem[]> {
     return items
   }
 
+export async function getPhotosSharing(): Promise<PhotoItem[]> {
+  logger.info(`get Shared Photos`)
+  const items =  await (await photoAccess.getPhotosSharing()).map(convertWithUrl)
+  return items
+}
+
 async function getPhoto(photoId: string, userId: string) {
   const photo = await photoAccess.getPhotoItem(photoId, userId)
   if (!photo) {
